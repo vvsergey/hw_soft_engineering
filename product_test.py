@@ -14,7 +14,7 @@ def test_read_maim():
 def test_predict_dog():
     files = {'file': open('images/dog.jpeg', 'rb')}
     response = client.post('/', files=files)
-    assert response.json() == {"Labrador_retriever": 0.9008357524871826}
+    assert response.json() == ["Labrador_retriever"]
     assert response.status_code == 200
 
 
@@ -22,4 +22,4 @@ def test_predict_cat():
     files = {'file': open('images/cat.jpeg', 'rb')}
     response = client.post('/', files=files)
     assert response.status_code == 200
-    assert response.json() == {"Egyptian_cat": 0.5981801152229309}
+    assert response.json() == ["Egyptian_cat"]

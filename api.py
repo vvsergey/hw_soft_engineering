@@ -18,6 +18,6 @@ async def predict_process(file: UploadFile = File(...)):
     x = mdl.preprocess_image(img)
     prd = model.predict(x)
     cls = mdl.get_predictions(prd)
-    return {cls[0][1]: float(cls[0][2])}
+    return {cls[0][1]}
 
 
