@@ -1,7 +1,9 @@
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
+from tensorflow.keras.applications.efficientnet import (preprocess_input,
+                                                        decode_predictions)
 import numpy as np
+
 
 def load_model():
     model = EfficientNetB0(weights='imagenet')
@@ -15,6 +17,6 @@ def preprocess_image(img):
     x = preprocess_input(x)
     return x
 
-def get_predictions(preds):
-    return decode_predictions(preds, top=1)[0]
 
+def get_predictions(prd):
+    return decode_predictions(prd, top=1)[0]

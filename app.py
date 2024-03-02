@@ -7,7 +7,8 @@ from PIL import Image
 def load_image():
     """Создание формы для загрузки изображения"""
     # Форма для загрузки изображения средствами Streamlit
-    uploaded_file = st.file_uploader(label='Выберите изображение для распознавания')
+    uploaded_file = (st.file_uploader
+                     (label='Выберите изображение для распознавания'))
     if uploaded_file is not None:
         # Получение загруженного изображения
         image_data = uploaded_file.getvalue()
@@ -38,9 +39,9 @@ if result:
     # Предварительная обработка изображения
     x = mdl.preprocess_image(img)
     # Распознавание изображения
-    preds = model.predict(x)
+    prd = model.predict(x)
     # Выводим заголовок результатов распознавания жирным шрифтом
     # используя форматирование Markdown
     st.write('**Результаты распознавания:**')
     # Выводим результаты распознавания
-    print_predictions(preds)
+    print_predictions(prd)
