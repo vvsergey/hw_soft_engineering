@@ -1,3 +1,6 @@
+"""
+Модуль реализует приложение средствами Streamlit
+"""
 import io
 import streamlit as st
 import model as mdl
@@ -5,8 +8,11 @@ from PIL import Image
 
 
 def load_image():
-    """Создание формы для загрузки изображения"""
-    # Форма для загрузки изображения средствами Streamlit
+    """
+    Создает форму для загрузки
+    изображения средствами Streamlit
+    :return: десериализованный объект изображения
+    """
     uploaded_file = (st.file_uploader
                      (label='Выберите изображение для распознавания'))
     if uploaded_file is not None:
@@ -21,6 +27,11 @@ def load_image():
 
 
 def print_predictions(prd):
+    """
+    Печать результатов распознования
+    :param prd: предиктор
+    :return: none
+    """
     classes = mdl.get_predictions(prd)
     for cl in classes:
         st.write(cl[1], cl[2])
