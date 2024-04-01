@@ -36,3 +36,4 @@ async def predict_process(file: UploadFile = File(...)):
     prd = model.predict(x)
     cls = mdl.get_predictions(prd)
     return {cls[0][1]}
+
