@@ -39,4 +39,13 @@ async def predict_process(file: UploadFile = File(...)):
     return {cls[0][1]}
 
 
+@app.get('/')
+async def get_wiki_info(word: str):
+    """
+    метод извлекает краткую тезисную
+    информацию из wiki
+    :param word: слово для поиска
+    :return: результат поиска вики
+    """
+    return from_wiki.get_wiki_info(word)
 
