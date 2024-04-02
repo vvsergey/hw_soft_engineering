@@ -4,10 +4,10 @@ Wikipedia
 """
 import wikipedia as wiki
 
-wiki.set_lang('ru')
-
 
 def get_wiki_info(word: str):
+    wiki.set_lang('ru')
+    print(word)
     """
     :param word:искомое слово для поиска
     :return:
