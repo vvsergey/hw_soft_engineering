@@ -1,10 +1,12 @@
 """
 Модуль реализует приложение средствами Streamlit
 """
-import io
-import streamlit as st
-import model as mdl
 from PIL import Image
+import io
+import model as mdl
+import streamlit as st
+import dwnl_from_wiki as from_wiki
+
 
 
 def load_image():
@@ -26,17 +28,6 @@ def load_image():
         return None
 
 
-def print_predictions(prd):
-    """
-    Печать результатов распознования
-    :param prd: предиктор
-    :return: none
-    """
-    classes = mdl.get_predictions(prd)
-    for cl in classes:
-        st.write(cl[1], cl[2])
-
-
 # Загружаем предварительно обученную модель
 model = mdl.load_model()
 # Выводим заголовок страницы
@@ -45,6 +36,7 @@ st.title('Классификация изображений')
 img = load_image()
 # Показывам кнопку для запуска распознавания изображения
 result = st.button('Распознать изображение')
+recognize = ''
 # Если кнопка нажата, то запускаем распознавание изображения
 if result:
     # Предварительная обработка изображения
@@ -54,5 +46,7 @@ if result:
     # Выводим заголовок результатов распознавания жирным шрифтом
     # используя форматирование Markdown
     st.write('**Результаты распознавания:**')
+    recognize += mdl.get_predictions(prd)[0][1]
+    st.write(recognize)
+    st.write(from_wiki.get_wiki_info(recognize))
     # Выводим результаты распознавания
-    print_predictions(prd)
