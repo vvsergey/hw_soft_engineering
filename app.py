@@ -49,4 +49,4 @@ if result:
     recognize += mdl.get_predictions(prd)[0][1]
     st.write(recognize)
     st.write(from_wiki.get_wiki_info(recognize))
-    # Выводим результаты распознавания
+
