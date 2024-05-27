@@ -5,16 +5,16 @@ Wikipedia
 import wikipedia as wiki
 
 
-def get_wiki_info(word: str):
-    wiki.set_lang('ru')
-    print(word)
+def get_wiki_info(query: str):
     """
-    :param word:искомое слово для поиска
+    :param query:искомое слово для поиска
     :return:
     результат поиска по ключевому слову
     """
-    info = f'По запросу {word} ничего не найдено'
+    wiki.set_lang('ru')
+    query_result = f'По запросу {query} ничего не найдено'
     try:
-        info = wiki.summary(word)
+        query_result = wiki.summary(query)
     finally:
-        return info
+        return query_result
+
