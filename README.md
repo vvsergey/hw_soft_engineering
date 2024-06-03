@@ -39,12 +39,13 @@
 - `$ pip install -r requirements.txt` *(Установите зависимости из файла)*
 
 ## Запуск проекта
-### Cпомощью сервера Streamlit
+### https://hwsoftengineering-b6z7copbz8tjzx7ceabc5y.streamlit.app/
+### Локально с помощью сервера Streamlit
 1. Выполнить следующий код streamlit run: app.py
 2. Открыть в браузере адрес http://localhost:8501/
 3. Загрузить картинку и Нажать кнопку "Распознать изображение"
 4. Результат классификации выведится на экран
-### API 
+###  Локально API 
 1. uvicorn api:app
 2. Открыть запущенное приложение по адресу http://127.0.0.1:8000/docs
 3. Раскрыть строку "POST / Predict Process" и Нажать кнопку "Try it out" справа
@@ -61,4 +62,9 @@
 4. При слиянии ветки в основной репозиторий выполнялось Code Review: [https://github.com/vvsergey/hw_soft_engineering/commits?author=vvsergey](https://github.com/vvsergey/hw_soft_engineering/pulls?q=is%3Apr+is%3Aclosed)
 5. Код приложения соответстввует стилю PEP8 и правилам чистого кода
 6. В проекте использоваться предварительно обученная модель Tensorflow EfficientNetB0
-7. 
+7. Развертывание приложения:
+* Работоспособность решения может быть проверена на развёрнутой VPS (без GPU) по URL:(https://hwsoftengineering-b6z7copbz8tjzx7ceabc5y.streamlit.app/)[https://hwsoftengineering-b6z7copbz8tjzx7ceabc5y.streamlit.app/]
+* Либо путём развёртывания на собственной витруальной машине см. инстркцию в рвзделе **Запуск проекта**
+8. В репозитории на GitHub оформлена документация
+  Исходный код содержит комментарии, которые позволят обеспечить его поддерживаемость и изменение существующими и новыми разработчиками, а также изучение способа реализации продвинутыми пользователями.
+  
